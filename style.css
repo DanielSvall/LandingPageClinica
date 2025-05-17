@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
 }
 
 body{
@@ -37,44 +36,87 @@ nav {
   background-color: antiquewhite;
   padding: 0 20px;
 }
-
-nav .logo {
-  max-height: 200px;        /* MESMA ALTURA DA NAV PARA PRENCER CORRETAMENTE*/
-  width: auto;
-  display: block;
+nav .logo{
+  width: 20rem; /* ou o tamanho que quiser */
+  height: auto; /* mantém proporção */
 }
 
-main{
-  display: flex;
+  .hero-ajuda {
+  margin-top: 100px; /* ou mais, se precisar */
 }
-aside{
-  display: flex;
-}
-footer{
-  display: flex;
+.hero-ajuda {
+  background-image: url('/imgg/main/ajuda.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 100px 20px 60px;
+  min-height: 500px;
+  position: relative;
+  color: white;
+  text-align: center;
+  margin-top: 100px; /* para garantir afastamento do header */
 }
 
- @media (max-width: 600px) {
+.hero-ajuda::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6); /* escurece a imagem */
+  z-index: 1;
+}
+
+.hero-ajuda .overlay {
+  position: relative;
+  z-index: 2;
+  max-width: auto;
+  margin: auto;
+}
+
+.hero-ajuda h1 {
+  font-size: 2.5rem;
+  color: #ffc107; /* amarelo */
+  margin-bottom: 20px;
+}
+
+.hero-ajuda p {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.hero-ajuda h3 {
+  margin-top: 30px;
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+.botoes {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.botoes a {
+  background-color: #28a745;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  width: 100%;
+  max-width: 350px;
+  transition: background 0.3s;
+}
+
+.botoes a:hover {
+  background-color: #218838;
+}
+
+@media (max-width: 900px) {
   header {
     flex-direction: column;
     align-items: flex-start;
   }
-}
- .float{
-	position:fixed;
-	width:60px;
-	height:60px;
-	bottom:40px;
-	right:40px;
-	background-color:#25d366;
-	color:#FFF;
-	border-radius:50px;
-	text-align:center;
-  font-size:30px;
-	box-shadow: 2px 2px 3px #999;
-  z-index:100;
-}
-
-.my-float{
-	margin-top:16px;
 }
